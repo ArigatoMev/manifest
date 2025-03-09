@@ -94,6 +94,7 @@ pub struct RedBlackTree<'a, V: Payload> {
 
 /// A Red-Black tree which supports random access O(log n) and get max O(1),
 /// but does not require the data to be mutable.
+#[derive(Clone)]
 pub struct RedBlackTreeReadOnly<'a, V: Payload> {
     /// The address within data that the root node starts.
     root_index: DataIndex,
