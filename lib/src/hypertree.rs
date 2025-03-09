@@ -69,6 +69,7 @@ pub trait HyperTreeReadOperations<'a> {
     fn get_next_higher_index<V: Payload>(&'a self, index: DataIndex) -> DataIndex;
 }
 
+#[derive(Clone)]
 pub struct HyperTreeValueReadOnlyIterator<'a, T: HyperTreeReadOperations<'a>, V: Payload> {
     pub(crate) tree: &'a T,
     pub(crate) index: DataIndex,
